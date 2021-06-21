@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onmouseover="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+
+    <script>
+        var elemento = document.getElementById('area');
+        elemento.addEventListener('click', clicar);
+        
+        //elemento.addEventListener('onmouseover', entrar);
+        //elemento.addEventListener('onmouseout', clicar);
+        //por algum motivo não foi possivel utiluzar o onmouseover e onmouseout
+        //utilizando event listener, apenas direto no html
+
+
+        function clicar() {            
+            elemento.innerText = 'Clicou!'
+            elemento.style.background = 'red'
+        }
+
+        function entrar() {            
+            elemento.innerText = 'Entrou!'
+        }
+
+        function sair() {            
+            elemento.innerText = 'Saiu!'
+            elemento.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
